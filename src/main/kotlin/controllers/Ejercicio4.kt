@@ -1,31 +1,6 @@
 package org.example.controllers
-import java.util.*
+import utilities.*
 
-/**
- *
- */
-fun abrirScanner() : Scanner {
-    var scan = Scanner(System.`in`)
-
-    return scan
-}
-
-/**
- *
- */
-fun cerrarScanner(scan : Scanner) {
-    scan.close()
-}
-
-/**
- *
- */
-fun leerString(msg : String, scan : Scanner) : String {
-    print(msg)
-    var titulo = scan.nextLine()
-
-    return titulo
-}
 
 /**
  *
@@ -83,7 +58,7 @@ fun main () {
 
     var array = definirArray()
 
-    var titulo = leerString("Digame un titulo para centralo, gracias: ", scan)
+    var titulo = leerLinea("Digame un titulo para centralo, gracias: ", scan)
 
     var tamanyo = guardarTamanyo(titulo)
 
