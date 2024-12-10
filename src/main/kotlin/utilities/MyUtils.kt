@@ -1,5 +1,4 @@
 package utilities
-
 import java.util.*
 
 /**
@@ -27,10 +26,36 @@ fun cerrarScanner(scan : Scanner) {
  * @author Angel Sardinha
  * @param msg --> Mensaje para indicar al usuario que hacer
  * @param scan --> Funccion de scanner
+ * @return Retorna un string
  */
 fun leerLinea(msg : String, scan : Scanner) : String {
     print(msg)
     var titulo = scan.nextLine()
 
     return titulo
+}
+
+/**
+ * Lectura de un numero
+ * @author Angel Sardinha
+ * @param msg --> Mensaje que se mostrara por pantalla
+ * @param scan --> Funcion de scanner
+ * @return Retorna un numero entero
+ */
+fun pedirNumerito(msg : String, scan : Scanner) : Int {
+    var numerito : Int
+
+    print(msg)
+    numerito = scan.nextInt()
+
+    return numerito
+}
+
+/**
+ * Muestra un mensaje por pantalla sin un salto de linea
+ * @author Angel Sardinha
+ * @param msg --> Mensaje que se mostrara en pantalla
+ */
+fun mostrarMensajeSinSalto(msg : String) {
+    print(msg)
 }
