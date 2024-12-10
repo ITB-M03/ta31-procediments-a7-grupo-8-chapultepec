@@ -34,6 +34,28 @@ fun leerLinea(msg : String, scan : Scanner) : String {
 
     return titulo
 }
+/**
+ * Lectura de la Int
+ * @author Angel Sardinha
+ * @param msg --> Mensaje para indicar al usuario que hacer
+ * @param scan --> Funccion de scanner
+ */
+fun leerInt(msg : String, scan : Scanner) : Int {
+    print(msg)
+    var numero = scan.nextInt()
+
+    return numero
+}
+
+/**
+ * Prin menaje
+ * @author Iván Salamanca
+ * @param msg --> Mensaje a imprimir
+ */
+fun printlnMSG (msg: String) {
+    println(msg)
+}
+
 
 /**
  * Lectura de un numero
@@ -58,4 +80,14 @@ fun pedirNumerito(msg : String, scan : Scanner) : Int {
  */
 fun mostrarMensajeSinSalto(msg : String) {
     print(msg)
+}
+
+/**
+ * Mostrar el resultado con un Int
+ * @author Iván Salamanca
+ * @param msg --> Mensaje para mostrar
+ * @param resultado --> Resultado para mostrar
+ */
+fun showResulString (msg: String, resultado: String) {
+    println("$msg $resultado")
 }
