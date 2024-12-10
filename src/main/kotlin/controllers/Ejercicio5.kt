@@ -67,4 +67,5 @@ fun mostrarUltimo(pila: MutableList<Int>, msg : String) : Int {
     var ultimo : Int
     ultimo = pila.last()
 
+    return ultimo
 }
