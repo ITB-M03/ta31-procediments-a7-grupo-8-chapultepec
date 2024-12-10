@@ -60,7 +60,7 @@ fun eliminarNumero(pila : MutableList<Int>) : MutableList<Int> {
     return pila
 }
 
-/*
+/**
  *
  */
 fun mostrarUltimo(pila: MutableList<Int>, msg : String) : Int {
