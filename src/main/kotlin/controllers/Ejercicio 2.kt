@@ -1,6 +1,21 @@
 package org.example.controllers
 import utilities.*
 
+
+/**
+ * Funcion Main contiene el codigo ejecutable
+ * @author Iván Salamanca
+ */
+fun main() {
+    var scan = abrirScanner()
+    printlnMSG("Vamos a pasar numeros enteros a numeros Romanos")
+    var numeroInt = pedirNumerito("Intoduce un numero entero: ", scan)
+    var numRomano = intToRoman(numeroInt)
+    showResulString("El numero en Romano es :",numRomano )
+    cerrarScanner(scan)
+
+}
+
 /**
  * Convertir numero entero a romano
  * @author Iván Salamanca
@@ -38,16 +53,3 @@ fun intToRoman(num: Int): String {
     return result
 }
 
-/**
- * Funcion Main contiene el codigo ejecutable
- * @author Iván Salamanca
- */
-fun main() {
-    var scan = abrirScanner()
-    printlnMSG("Vamos a pasar numeros enteros a numeros Romanos")
-    var numeroInt = pedirNumerito("Intoduce un numero entero: ", scan)
-    var numRomano = intToRoman(numeroInt)
-    showResulString("El numero en Romano es :",numRomano )
-
-
-}
