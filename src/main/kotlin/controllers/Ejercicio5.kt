@@ -3,7 +3,11 @@ import utilities.*
 import java.util.Scanner
 
 /**
- *
+ * La magnifica funcion del menu que te ayuda a escoger tu opcion
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param scan --> El scanner que te ayuda a obtener cosas desde el teclado
+ * @return Retorna la opcion que has elegido
  */
 fun menu(scan : Scanner) : Int {
     var opciones : Int
@@ -22,7 +26,11 @@ fun menu(scan : Scanner) : Int {
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param scan --> El scanner que te ayuda a obtener los valores del teclado
+ * @param pila --> La lista donde estan los valores
  */
 fun bucle(scan : Scanner, pila: MutableList<Int>) {
     var opciones = 0
@@ -51,7 +59,10 @@ fun bucle(scan : Scanner, pila: MutableList<Int>) {
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @return Retorna una lista vacia
  */
 fun definirPila() : MutableList<Int> {
     var pila : MutableList<Int> = mutableListOf()
@@ -60,36 +71,52 @@ fun definirPila() : MutableList<Int> {
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param scan --> El scanner que te ayuda a obtener los valores del teclado
+ * @param pila --> La lista de valores
+ * @return Retorna la lista pero con valores dentro
  */
 fun introducirUnNumero(scan : Scanner, pila : MutableList<Int>) : MutableList<Int> {
     var numero : Int
     val diez = 10
     val red = "\u001b[31m"
     val white = "\u001b[0m"
+    var siONo = "S"
 
-    numero = pedirNumerito("Digame el numero que quiere introducir: ", scan)
+    while(siONo == "S"){
+        numero = pedirNumerito("Digame el numero que quiere introducir: ", scan)
+        scan.nextLine()
 
-    if(pila.size <= diez){
-        pila.add(numero)
+        if(pila.size <= diez){
+            pila.add(numero)
+        }
+        else printlnMSG(red + "NO, eso no se puede, la pila esta llena" + white)
+
+        siONo = leerLinea("Deseas seguir introduciendo numeros? [S/N]: ", scan).uppercase()
     }
-    else printlnMSG(red + "NO, eso no se puede, la pila esta llena" + white)
 
     return pila
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param pila --> La lista con o sin valores dentro
+ * @return Retorna la lista menos el ultimo valor si es que tiene
  */
 fun eliminarNumero(pila : MutableList<Int>) : MutableList<Int> {
     val red = "\u001b[31m"
     val white = "\u001b[0m"
-    mostrarUltimo(pila)
+    var tamanyo = pila.size
 
     try {
+        mostrarUltimo(pila)
         pila.removeLast()
     }
-    catch ( e : NoSuchElementException){
+    catch(e : Exception){
         printlnMSG(red + "Esto no se puede hacer, la pila esta vacia :(" + white)
     }
 
@@ -97,24 +124,32 @@ fun eliminarNumero(pila : MutableList<Int>) : MutableList<Int> {
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param pila --> La lista
  */
 fun mostrarUltimo(pila: MutableList<Int>){
     var ultimo : Int
-    ultimo = pila.last()
 
-    mostrarMensajeSinSalto("El numero que has eliminado es: $ultimo \n")
+        ultimo = pila.last()
+        mostrarMensajeSinSalto("El numero que has eliminado es: $ultimo \n")
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
+ * @param pila --> La lista
  */
 fun mostrarContenido(pila: MutableList<Int>) {
     mostrarMensajeSinSalto("Este es el contenido de la pila actualmente: $pila \n" )
 }
 
 /**
- *
+ * La magnifica funcion main que te ayuda a organizar
+ * @author Angel Sardinha
+ * @since 1 - 0
  */
 fun main() {
     var scan = abrirScanner()
