@@ -83,4 +83,4 @@ fun menu1(scan : Scanner) : Int {
     return opcion
 }
 
-fun menu2(scan : Scanner, )
+fun menu2(){}
