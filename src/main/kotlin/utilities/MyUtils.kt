@@ -7,7 +7,7 @@ import java.util.*
  * @return Devuelve el scanner para usarlo en el resto del programa
  */
 fun abrirScanner() : Scanner {
-    var scan = Scanner(System.`in`)
+    var scan = Scanner(System.`in`).useLocale(Locale.UK)
 
     return scan
 }
