@@ -91,3 +91,17 @@ fun mostrarMensajeSinSalto(msg : String) {
 fun showResulString (msg: String, resultado: String) {
     println("$msg $resultado")
 }
+
+/**
+ * pedir nnumerito Doouble
+ * @author Iván Salamanca
+ * @param msg --> Mensaje para pedir numero
+ * @param scan --> Herramienta
+ * @return devuelve el numero obtenido
+ */
+fun pedirNumeritoDouble ( msg: String, scan: Scanner): Double {
+    var resultado : Double
+    print(msg)
+    resultado = scan.nextDouble()
+    return resultado
+}
